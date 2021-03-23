@@ -1,24 +1,28 @@
-import logo from './logo.svg';
+import React from 'react';
+import Post from "./Post";
 import './App.css';
 
 function App() {
+  const post = {
+    title: "Test post",
+    text: "This is a really nice post...",
+    author: {
+      fname: "Mira",
+      lname: "Eerikäinen",
+      date: "22.3.2021"
+    },
+    comments: {
+      comment: {
+        by: "Test user",
+        text: "Good job",
+        date: "23.3.2021"
+      }
+    }
+  }
+
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Post post={post} />
   );
 }
 
